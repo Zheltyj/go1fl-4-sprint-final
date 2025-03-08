@@ -10,6 +10,8 @@ import (
 	"github.com/Zheltyj/go1fl-4-sprint-final/internal/spentcalories"
 )
 
+const mInKm = 1000
+
 var (
 	StepLength = 0.65 // длина шага в метрах
 )
@@ -48,7 +50,7 @@ func DayActionInfo(data string, weight, height float64) string {
 	}
 
 	distM := float64(daySteps) * StepLength
-	distKm := distM / 1000
+	distKm := distM / mInKm
 
 	calories := spentcalories.WalkingSpentCalories(daySteps, weight, height, walkDuration)
 
